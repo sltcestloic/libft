@@ -6,7 +6,7 @@
 #    By: lbertran <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 16:40:32 by lbertran          #+#    #+#              #
-#    Updated: 2020/12/02 12:02:16 by lbertran         ###   ########lyon.fr    #
+#    Updated: 2020/12/03 15:06:21 by lbertran         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,10 +68,10 @@ CFLAGS	= -Wall -Wextra -Werror
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I${INCS}
 
 $(NAME): ${OBJS}
-	${LIBC} ${NAME} ${OBJS}
+	${LIBC} ${NAME} $?
 
-bonus: ${OBJS} ${OBJS_BONUS}
-	${LIBC} ${NAME} ${OBJS} ${OBJS_BONUS}
+bonus: ${OBJS_BONUS}
+	${LIBC} ${NAME} ${OBJS_BONUS}
 
 
 all: ${NAME}
