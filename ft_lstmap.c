@@ -6,7 +6,7 @@
 /*   By: lbertran <lbertran@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 14:05:46 by lbertran          #+#    #+#             */
-/*   Updated: 2020/11/26 15:06:33 by lbertran         ###   ########lyon.fr   */
+/*   Updated: 2020/12/21 16:56:26 by lbertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ t_list	*ft_lstmap(t_list *list, void *(*f)(void *), void (*del)(void *))
 		if (!(new_elem = ft_lstnew((*f)(list->content))))
 		{
 			ft_lstclear(&new_list, del);
+			return (NULL);
 		}
 		ft_lstadd_back(&new_list, new_elem);
 		list = list->next;

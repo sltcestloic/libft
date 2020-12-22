@@ -6,13 +6,14 @@
 #    By: lbertran <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 16:40:32 by lbertran          #+#    #+#              #
-#    Updated: 2020/12/03 15:06:21 by lbertran         ###   ########lyon.fr    #
+#    Updated: 2020/12/22 15:45:33 by lbertran         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS		= ft_atoi.c \
 			ft_bzero.c \
 			ft_calloc.c \
+			ft_intlen.c \
 			ft_isalnum.c \
 			ft_isalpha.c \
 			ft_isascii.c \
@@ -68,10 +69,10 @@ CFLAGS	= -Wall -Wextra -Werror
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I${INCS}
 
 $(NAME): ${OBJS}
-	${LIBC} ${NAME} $?
+	${LIBC} ${NAME} ${OBJS}
 
-bonus: ${OBJS_BONUS}
-	${LIBC} ${NAME} ${OBJS_BONUS}
+bonus: ${OBJS} ${OBJS_BONUS}
+	${LIBC} ${NAME} ${OBJS} ${OBJS_BONUS}
 
 
 all: ${NAME}

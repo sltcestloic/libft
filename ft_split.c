@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbertran <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lbertran <lbertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 16:21:23 by lbertran          #+#    #+#             */
-/*   Updated: 2020/11/27 15:05:07 by lbertran         ###   ########lyon.fr   */
+/*   Updated: 2020/12/22 15:33:36 by lbertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	free_all(char **ret, int size)
 	size_t	i;
 
 	i = 0;
-	while (i < (size_t)size && ret[i])
+	while (i < (size_t)size)
 	{
 		free(ret[i]);
 		i++;
@@ -95,7 +95,7 @@ char	**ft_split(const char *str, char c)
 		{
 			if (!(ret[wc] = ft_strrdup(str, get_w_start(str, c, i), i)))
 			{
-				free_all(ret, wc - 1);
+				free_all(ret, wc);
 				return (NULL);
 			}
 			wc++;
