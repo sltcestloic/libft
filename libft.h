@@ -6,7 +6,7 @@
 /*   By: lbertran <lbertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 19:59:28 by lbertran          #+#    #+#             */
-/*   Updated: 2021/01/12 10:22:13 by lbertran         ###   ########lyon.fr   */
+/*   Updated: 2021/01/13 10:18:11 by lbertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,15 @@
 # include <unistd.h>
 # include <limits.h>
 
-# define TRUE 1
-# define FALSE 0
+# ifndef TRUE
+#  define TRUE 1
+# endif
+# ifndef FALSE
+#  define FALSE 0
+# endif
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 4096
+# endif
 
 typedef struct	s_list
 {
@@ -76,5 +83,8 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), \
 char			*ft_uitoa(unsigned long long nbr);
 size_t			ft_uintlen(unsigned long long nbr, int baselen);
 char			*ft_ull_base(unsigned long long nbr, char *base);
+char			*ft_strndup(const char *s, size_t n);
+int				ft_strichr(const char *s, int c);
+int				ft_get_next_line(int fd, char **line);
 
 #endif

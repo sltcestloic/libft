@@ -6,13 +6,14 @@
 #    By: lbertran <lbertran@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 16:40:32 by lbertran          #+#    #+#              #
-#    Updated: 2021/01/12 10:11:03 by lbertran         ###   ########lyon.fr    #
+#    Updated: 2021/01/13 10:18:27 by lbertran         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS		= ft_atoi.c \
 			ft_bzero.c \
 			ft_calloc.c \
+			ft_get_next_line.c \
 			ft_intlen.c \
 			ft_isalnum.c \
 			ft_isalpha.c \
@@ -34,12 +35,14 @@ SRCS		= ft_atoi.c \
 			ft_split.c \
 			ft_strrchr.c \
 			ft_strdup.c \
+			ft_strichr.c \
 			ft_strjoin.c \
 			ft_strlcat.c \
 			ft_strlcpy.c \
 			ft_strlen.c \
 			ft_strmapi.c \
 			ft_strncmp.c \
+			ft_strndup.c \
 			ft_strnstr.c \
 			ft_strchr.c \
 			ft_strrchr.c \
