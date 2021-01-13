@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_intlen.c                                        :+:      :+:    :+:   */
+/*   ft_uintlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbertran <lbertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/22 15:43:28 by lbertran          #+#    #+#             */
-/*   Updated: 2021/01/11 16:59:00 by lbertran         ###   ########lyon.fr   */
+/*   Created: 2021/01/12 09:52:51 by lbertran          #+#    #+#             */
+/*   Updated: 2021/01/12 10:22:04 by lbertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_intlen(long nbr)
+size_t	ft_uintlen(unsigned long long nbr, int baselen)
 {
 	size_t	i;
 
 	i = 0;
-	if (nbr < 0)
-	{
-		i++;
-		nbr = -nbr;
-	}
 	if (nbr == 0)
 		return (1);
 	while (nbr)
 	{
-		nbr /= 10;
+		nbr /= baselen;
 		i++;
 	}
 	return (i);

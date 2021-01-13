@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_intlen.c                                        :+:      :+:    :+:   */
+/*   ft_uitoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbertran <lbertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/22 15:43:28 by lbertran          #+#    #+#             */
-/*   Updated: 2021/01/11 16:59:00 by lbertran         ###   ########lyon.fr   */
+/*   Created: 2021/01/11 16:36:05 by lbertran          #+#    #+#             */
+/*   Updated: 2021/01/12 09:57:24 by lbertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_intlen(long nbr)
+char	*ft_uitoa(unsigned long long nbr)
 {
-	size_t	i;
+	char	*ret;
+	int		len;
+	long	nb;
 
-	i = 0;
-	if (nbr < 0)
+	nb = nbr;
+	len = ft_intlen(nb);
+	if (!(ret = malloc(sizeof(char) * (len + 1))))
+		return (NULL);
+	ft_bzero(ret, len + 1);
+	while (len--)
 	{
-		i++;
-		nbr = -nbr;
+		ret[len] = nb % 10 + 48;
+		nb /= 10;
 	}
-	if (nbr == 0)
-		return (1);
-	while (nbr)
-	{
-		nbr /= 10;
-		i++;
-	}
-	return (i);
+	return (ret);
 }

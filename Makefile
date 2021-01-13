@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lbertran <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: lbertran <lbertran@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 16:40:32 by lbertran          #+#    #+#              #
-#    Updated: 2020/12/22 15:45:33 by lbertran         ###   ########lyon.fr    #
+#    Updated: 2021/01/12 10:11:03 by lbertran         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,10 @@ SRCS		= ft_atoi.c \
 			ft_strtrim.c \
 			ft_substr.c \
 			ft_tolower.c \
-			ft_toupper.c
+			ft_toupper.c \
+			ft_uintlen.c \
+			ft_uitoa.c \
+			ft_ull_base.c
 SRCS_BONUS	= ft_lstadd_back.c \
 			ft_lstadd_front.c \
 			ft_lstclear.c \
