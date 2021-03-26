@@ -6,11 +6,13 @@
 /*   By: lbertran <lbertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 23:12:59 by lbertran          #+#    #+#             */
-/*   Updated: 2020/11/23 16:25:41 by lbertran         ###   ########lyon.fr   */
+/*   Updated: 2021/03/26 12:34:47 by lbertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
-	return ((c >= 'A' && c <= 'Z') ? c + 32 : c);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
 }
