@@ -6,7 +6,7 @@
 #    By: lbertran <lbertran@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 16:40:32 by lbertran          #+#    #+#              #
-#    Updated: 2021/04/01 15:07:28 by lbertran         ###   ########lyon.fr    #
+#    Updated: 2021/04/27 13:36:16 by lbertran         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ SRCS		= char/ft_isalnum.c \
 				memory/ft_memcpy.c \
 				memory/ft_memmove.c \
 				memory/ft_memset.c \
+				memory/ft_malloc.c \
 				print/ft_putchar_fd.c \
 				print/ft_putendl_fd.c \
 				print/ft_putnbr_fd.c \
@@ -40,6 +41,7 @@ SRCS		= char/ft_isalnum.c \
 				string/ft_split.c \
 				string/ft_strchr.c \
 				string/ft_strcmp.c \
+				string/ft_strcpy.c \
 				string/ft_strdup.c \
 				string/ft_strichr.c \
 				string/ft_strjoin.c \
@@ -77,7 +79,7 @@ CFLAGS	= -Wall -Wextra -Werror
 $(NAME): ${OBJS}
 	${LIBC} ${NAME} ${OBJS}
 
-bonus: ${OBJS_BONUS}
+bonus: ${OBJS_BONUS} all
 	${LIBC} ${NAME} ${OBJS} ${OBJS_BONUS}
 
 

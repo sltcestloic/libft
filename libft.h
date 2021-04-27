@@ -6,7 +6,7 @@
 /*   By: lbertran <lbertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 19:59:28 by lbertran          #+#    #+#             */
-/*   Updated: 2021/04/01 15:13:55 by lbertran         ###   ########lyon.fr   */
+/*   Updated: 2021/04/27 13:36:03 by lbertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,12 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }				t_list;
+
+typedef struct s_free
+{
+	void			*data;
+	void			*next;
+}				t_free;
 
 /*
 ** Char
@@ -91,6 +97,9 @@ void			*ft_memmove(void *dest, const void *src, size_t n);
 void			*ft_memchr(const void *s, int c, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 void			*ft_calloc(size_t count, size_t size);
+void			ft_free(t_free *to_free);
+void			ft_free_one(t_free **to_free);
+char			*ft_malloc(int size, t_free **to_free);
 
 /*
 ** Print
@@ -105,6 +114,7 @@ void			ft_putnbr_fd(int n, int fd);
 ** String
 */
 
+size_t			ft_strcpy(char *dest, const char *src);
 size_t			ft_strlen(const char *str);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				ft_strcmp(const char *s1, const char *s2);
@@ -122,6 +132,7 @@ char			*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 char			*ft_strndup(const char *s, size_t n);
 int				ft_strichr(const char *s, int c);
 void			free_split(char **ret);
+char			*ft_strrdup(const char *str, int start, int end);
 
 /*
 ** Text colors
